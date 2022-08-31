@@ -1,0 +1,65 @@
+server:
+  servlet:
+    context-path: /wechat/demo
+  port: 8081
+
+wechat:
+  config:
+    #微信appId
+    appId: wxfd10fd383fd81ed5
+    #微信appSecret
+    appSecret: 210de2f5c881379232cf76c5a74b165a
+    token: 填写微信token
+    #配置一个文字的模板ID
+    singleTemplateId:
+    template:
+      #早安模板
+      morningTemplate:
+        #模板ID
+        templateId: nFW3kWXNIJzcdK0aWN3DT9qHeSuL43liqIdwKGrHbnA
+   #      templateId: _0ZKGjXpFKisw-xnawI2Iva6Ii16VxIfNxQUPjO0c2M
+        #是否关注的用户全发送，ture为是，当值为ture时，sendOpenId 为排除发送对象的微信用户，当值为false为否，sendOpenId为发送对象的微信用户
+        allSend: true
+        filterOpenIds:
+#          - o_hTL58Tkio-kF2RphC4OcseuXvE
+#          - o_hTL58Tkio-kF2RphC4OcseuXvE
+#          - o_hTL53TJqfpHl8b3L966c1_QqiY
+        parameter:
+          #这是默认的设置，如果有用户没设置参数，就按此参数
+          default:
+            #早安话语
+            title: 早上好鸭
+            #你们的相遇时间
+            meetDate: '2019-09-13'
+            city: 大连
+            #居住地点，高德地图api下载查询 https://lbs.amap.com/api/webservice/download
+            cityCode: 210200
+            constellation: 白羊座
+          #用户openID，多用户可以按照格式继续添加下去
+          填写你的需要特定配置的微信用户号:
+            title: 早安打工人
+            meetDate: '2021-08-11'
+            city: 肇庆
+            cityCode: 440600
+            constellation: 狮子座
+      #颜文字模板
+      emoticonsTemplate:
+        templateId: eXjG6u5riQ4A4sue8yO8VJZJfTcHS2MI3cJYDhJsE-Y
+        allSend: true
+        filterOpenIds:
+        #          - o_hTL58Tkio-kF2RphC4OcseuXvE
+        #          - o_hTL58Tkio-kF2RphC4OcseuXvE
+        #          - o_hTL53TJqfpHl8b3L966c1_QqiY
+        parameter:
+          default:
+            title: 1
+#发送者个人信息
+personal:
+  info:
+    constellation: 双子座
+
+lbs:
+  key: 填写高德地图key
+
+constellation:
+  key: 填写星座接口key
